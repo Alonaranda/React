@@ -1,0 +1,10 @@
+Para empezar necesitamos tener instalado:
+
+Chrome
+React Developer Tools
+Redux Devtools 
+Visual Studio Code 
+Postman 
+Mongo Compass 
+Git 
+Node 
