@@ -1,5 +1,5 @@
 Para empezar necesitamos tener instalado:
-
+https://gist.github.com/Klerith/4a4abfd88a88b2d1f16efd95fea41362
 Chrome
 React Developer Tools
 Redux Devtools 
@@ -8,3 +8,36 @@ Postman
 Mongo Compass 
 Git 
 Node 
+
+Documentación REACT: https://create-react-app.dev/
+
+¿Qué es React?
+-Es una librería que nos permite crear aplicaciones
+-Todo tipo de magnitud 
+-Declarativa
+-Eficiente
+-Predecible 
+-Componentes 
+-Serve-side con Node 
+-Aplicaciones moviles con react native
+
+Babel:
+JSX = JS + XML
+
+Al ser una librería se debe importar REACT: https://gist.github.com/Klerith/b0111f52ba16451d095f38d4c995605b
+
+    <!-- Cargat React -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+
+
+
+Crear nuevo proyecto React:
+
+npx create-react-app nameApp
+
+Empezar servidor: npm start 
+
