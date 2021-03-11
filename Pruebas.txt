@@ -1,0 +1,63 @@
+//Introduccion a las Pruebas
+
+¿Qué son las pruebas? 
+- Existen las pruebas unitarias y de integración 
+
+Unitarias: Enfocadas en pequeñas funcionalidades 
+Integración: Enfocadas en como reaccionan varias piezas en conjunto
+
+Caracteristicas de las pruebas:
+-Faciles de escribir 
+-Faciles de leer 
+-Confiables 
+-Rapidas
+-Principalmente unitarias 
+
+AAA(Arrange,Act,Assert)
+
+Arrange:Arreglar --> Preparamos el estado inicial(variables, importaciones)
+Act:Actuar --> Aplicamos acciones o estimulos(metodos, click, realizar accion)
+Assert:Afirmar --> Observar el comportamiento resultante(Resultado esperado?)
+
+
+
+Se recomienda crear los archivos test en un directorio tests
+Archivos con contraparte .js 
+
+//Correr pruebas 
+1.- Ir a la carpeta de la app 
+2.- npm run test 
+
+test('Probandologin', ()=>{
+
+})
+
+//JEST  --> Pruebas
+Expect - toBe
+https://jestjs.io/
+
+describe('Agrupa tests', ()=> {
+
+})
+
+
+//Completar jest
+import '@testing-library/jest-dom';
+
+import '@testing-library/jest-dom/extend-expect';
+
+//Wrapper = Producto renderizado de mi componente React
+
+
+Es mejor probar con Enzyme, para que no se complique
+por tantas cosas que se pueden hacer con los componentes 
+de React, revisar la version de React 
+Documentacion: https://enzymejs.github.io/enzyme/
+Extension: https://www.npmjs.com/package/enzyme-to-json
+Instalacion React 17: https://github.com/wojtekmaj/enzyme-adapter-react-17
+Instalacion: npm install --save-dev enzyme
+
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+Enzyme.configure({ adapter: new Adapter() });

@@ -35,9 +35,77 @@ Al ser una librería se debe importar REACT: https://gist.github.com/Klerith/b01
 
 
 
-Crear nuevo proyecto React:
-
-npx create-react-app nameApp
-
+Crear nuevo proyecto React: npx create-react-app nameApp
 Empezar servidor: npm start 
+
+
+
+
+
+¿Qué es un componente en React?
+-Pequeña pieza de código encapsulado re-utilizable que puede tener estado o no, 
+que realiza una determinada acción
+TwiterApp > Router > Screen/Pagina > Menu > MenuItem
+Estado: Como se encuentra la información en un determinado tiempo 
+
+
+
+
+//Estructura de directorios
+src --> Aqui tenemos lo necesario para que nuestra App funcione,
+    APP.js --> Funcion de nuestra app
+    APP.test.js --> Realiza pruebas
+    index.css --> Estilos globales 
+    index.js --> Punto inicial de nuestra app 
+    logo.svg --> Imagen vertorizada 
+    serviceWorker.js --> PWA, cache 
+    setupTests.js --> Lo primero que se levanta para las pruebas 
+node_modules --> Librerías y paquetes que hacen que funcione mi aplicación en prod 
+public --> Mi aplicacion, punto inicial del index 
+gitignore --> Selecciona que carpetas me interesan 
+package.json --> versiones y dependencias de mi aplicacion, solo agregamos scripts
+README --> Descripcion de la aplicacion
+yarn.lock --> Define las versiones y paquetes utilizados
+
+//https://developers.google.com/web/ilt/pwa
+//https://create-react-app.dev/docs/available-scripts/
+
+
+//Comunicacion entre componentes 
+Se utiliza props donde se define en Padre, y con props. se accede a los valores.
+Una buena practica es hacer una desestructuracion de elementos {}
+Se pueden definir así: 
+
+
+PrimeraApp.propTypes = {
+    despedida: PropTypes.string.isRequired,
+}
+
+PrimeraApp.defaultProps = {
+    subtitulo: 'Soy un subtitulo'
+}
+
+//Functional component rafc
+
+//Eventos en React 
+https://es.reactjs.org/docs/events.html
+
+<button onClick={handleAdd}>+1</button>//Se pasa el evento e como primer argumento
+
+    const handleAdd = (e) => {
+        console.log(e);
+    }
+
+
+//Hook 
+Es una funcion y retorna un arreglo [argumento, funcion] 
+[ argumento, ()=> {}] con desestructuracion podemos obtener los dos
+Un use es un Hook
+const useState = (valor) => {
+    return [valor, () =>{console.log('Hola')}];
+} 
+const [nombre, setNombre] = useState('Goku);
+
+La funcion sirve para modificar la variable, es su set 
+
 
