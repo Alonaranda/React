@@ -117,4 +117,9 @@ Una forma de extraer logica de un componente para reutilizar
 https://www.npmjs.com/package/http-server
 npm run build 
 
-https://docs.github.com/en/enterprise/2.13/user/articles/setting-your-username-in-git
+Empezar con git un proyecto final 
+
+git init 
+git add .
+git commit -m "First commit"
+//Se cambia build por docs para desplegar mi aplicacion en git 
