@@ -109,3 +109,12 @@ const [nombre, setNombre] = useState('Goku);
 La funcion sirve para modificar la variable, es su set 
 
 
+//CustomHooks
+Una forma de extraer logica de un componente para reutilizar 
+
+
+//Despliegue a Github Pages 
+https://www.npmjs.com/package/http-server
+npm run build 
+
+https://docs.github.com/en/enterprise/2.13/user/articles/setting-your-username-in-git

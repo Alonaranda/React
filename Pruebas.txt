@@ -41,9 +41,8 @@ describe('Agrupa tests', ()=> {
 })
 
 
-//Completar jest
+//Completar jest en setupTests
 import '@testing-library/jest-dom';
-
 import '@testing-library/jest-dom/extend-expect';
 
 //Wrapper = Producto renderizado de mi componente React
