@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Probando GifGrid Debe de mostrar items cuando carga useFetchGifs  1`] = `
+<Fragment>
+  <h3
+    className="animate_animated animate_fadeIn"
+  >
+    Inuyasha
+  </h3>
+  <div
+    className="card-grid"
+  >
+    <GifGridItem
+      id="ABC"
+      key="ABC"
+      title="Titulo"
+      url="https://localhost/cosa.jpg"
+    />
+    <GifGridItem
+      id="ASD"
+      key="ASD"
+      title="Titulo"
+      url="https://localhost/cosa.jpg"
+    />
+  </div>
+</Fragment>
+`;
+
+exports[`Probando GifGrid Hacer un snapshot  1`] = `
+<Fragment>
+  <h3
+    className="animate_animated animate_fadeIn"
+  >
+    Inuyasha
+  </h3>
+  <p
+    className="animate_animated animate_flash"
+  >
+    Loading...
+  </p>
+  <div
+    className="card-grid"
+  />
+</Fragment>
+`;

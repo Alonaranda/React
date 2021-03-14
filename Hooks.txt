@@ -1,0 +1,19 @@
+La convecion para saber que es un hook es con use 
+
+No se puede usar un hook dentro de una condicion, es una mala practica 
+
+
+//UseState 
+Util para formularios, poner los valores de referencias con un set 
+El operador sprend nos da un copia ...
+
+//UseCounter
+Para evitar hacerlo con useState, existe useCounter
+extrae la logica de mi contador 
+
+
+//UseEffect
+Ejecutar un efecto cuando ocurra algo en nuestro componente 
+Atrapa si algo en especifico esta cambiando 
+Conviene poner la funcion en eventos en variables (const) para tener referencia a ella y hacer limpieza
+Para un form conviene hacer un customHook con useState y handleInpuText para que lo podamos reutilizar 

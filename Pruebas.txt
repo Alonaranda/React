@@ -55,8 +55,28 @@ Documentacion: https://enzymejs.github.io/enzyme/
 Extension: https://www.npmjs.com/package/enzyme-to-json
 Instalacion React 17: https://github.com/wojtekmaj/enzyme-adapter-react-17
 Instalacion: npm install --save-dev enzyme
-
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-
 Enzyme.configure({ adapter: new Adapter() });
+
+Pasos: 
+npm install --save-dev @wojtekmaj/enzyme-adapter-react-17 --legacy-peer-deps
+npm install --save-dev enzyme 
+npm install --save-dev enzyme-to-json
+Poner esto en setupTests.js:
+    import Enzyme from 'enzyme';
+    import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+    import {createSerializer} from 'enzyme-to-json';
+
+    Enzyme.configure({ adapter: new Adapter() });
+    expect.addSnapshotSerializer(createSerializer({mode: 'deep'}));
+
+
+//Para probar customHooks
+https://react-hooks-testing-library.com/
+instalaar libreria de probar hooks
+npm install --save-dev @testing-library/react-hooks
+
+PeerDependencias --> No es necesario 
+npm install react@^16.9.0
+npm install --save-dev react-test-renderer@^16.9.0

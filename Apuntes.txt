@@ -76,6 +76,8 @@ Se utiliza props donde se define en Padre, y con props. se accede a los valores.
 Una buena practica es hacer una desestructuracion de elementos {}
 Se pueden definir así: 
 
+import PropTypes from 'prop-types';
+impt
 
 PrimeraApp.propTypes = {
     despedida: PropTypes.string.isRequired,
@@ -123,3 +125,4 @@ git init
 git add .
 git commit -m "First commit"
 //Se cambia build por docs para desplegar mi aplicacion en git 
+Ir a github ir a la carpeta/setting/Github Pages/Seleccionar ruta

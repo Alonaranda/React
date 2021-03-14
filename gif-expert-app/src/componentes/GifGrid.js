@@ -1,7 +1,9 @@
 import React from "react";
 import { useFetchGifs } from "../hooks/useFetchGifs";
 import { GifGridItem } from "./GifGridItem";
+import PropTypes from 'prop-types';
 //import { getGifs } from "../helpers/getGifs";
+
 
 export const GifGrid = ({ category }) => {
   //Al ejecutar una funcion dentro de una api, se vuelve un ciclo infinito
@@ -28,9 +30,10 @@ export const GifGrid = ({ category }) => {
 
   return (
     <>
-      <h3>{category}</h3>
-      {loading && <p>Loading...</p>}
-      <div className="card-grid animate__fadeIn">
+      <h3 className="animate_animated animate_fadeIn">{category}</h3>
+      {loading && <p className="animate_animated animate_flash">Loading...</p>}
+
+      <div className="card-grid">
         {images.map(img => (
           <GifGridItem key={img.id} {...img} />
         ))}
@@ -38,3 +41,7 @@ export const GifGrid = ({ category }) => {
     </>
   );
 };
+
+GifGrid.propTypes = {
+  category: PropTypes.string.isRequired
+}
