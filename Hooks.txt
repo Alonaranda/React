@@ -4,8 +4,11 @@ No se puede usar un hook dentro de una condicion, es una mala practica
 
 
 //UseState 
+Devuelve un valor con estado y una función para actualizarlo.
 Util para formularios, poner los valores de referencias con un set 
 El operador sprend nos da un copia ...
+La función setState se usa para actualizar el estado. Acepta un nuevo valor de estado y 
+sitúa en la cola una nueva renderización del componente.
 
 //UseCounter
 Para evitar hacerlo con useState, existe useCounter
@@ -13,7 +16,64 @@ extrae la logica de mi contador
 
 
 //UseEffect
+Acepta una función que contiene código imperativo, posiblemente código efectivo.
 Ejecutar un efecto cuando ocurra algo en nuestro componente 
 Atrapa si algo en especifico esta cambiando 
 Conviene poner la funcion en eventos en variables (const) para tener referencia a ella y hacer limpieza
 Para un form conviene hacer un customHook con useState y handleInpuText para que lo podamos reutilizar 
+
+//useFetch
+Breaking bad API -> https://breakingbadapi.com/
+Sirve para hacer conexion a APIs, tiene un state con la info: data, loading, error
+El fetch es una promesa que regresa otra promesa fetch(url).then(resp => resp.json()).then(data => {} return state 
+
+
+//useRef
+Es para tener una variables que cambia 
+useRef devuelve un objeto ref mutable cuya propiedad .current se inicializa con el 
+argumento pasado (initialValue). El objeto devuelto se mantendrá persistente durante 
+la vida completa del componente.
+
+//useLayoutEffect
+Documentacion --> https://es.reactjs.org/docs/hooks-reference.html#uselayouteffect
+La firma es idéntica a useEffect, pero se dispara de forma síncrona después de todas las mutaciones de DOM. 
+Use esto para leer el diseño del DOM y volver a renderizar de forma sincrónica. 
+Las actualizaciones programadas dentro de useLayoutEffect se vaciarán sincrónicamente, antes de que 
+el navegador tenga la oportunidad de pintar.
+
+//memo
+Memoriza algo si los props cambian 
+
+//useMemo
+Memoriza un resultado para que no se tenga que estar ejecutando 
+
+//¿Qué es un Reducer?
+1. Es una función común y corriente
+2. Debe de ser una función pura
+    No debe de tener efectos secundarios
+    No debe de realizar tareas asincronas 
+    Debe de retornar siempre un nuevo estado (No debe de mutar)
+    No debe de llamar localStorage o SessionStorage 
+    No debe de requerir mas que una accion 
+3. Debe de retornar un nuevo estado 
+4. Usualmente solo recibe dos argumentos(initialState) y la accion a ejecutar 
+
+//Funcionamineto del Reducer
+Empieza con un estado inicial = State 
+State -> Pagina o Vista -> Accion -> Reducer(Tiene los planos de que puede hacer con el state) 
+https://es.reactjs.org/docs/hooks-reference.html#usereducer
+
+Una alternativa a useState. Acepta un reducer de tipo (state, action) => newState y 
+devuelve el estado actual emparejado con un método dispatch. (Si está familiarizado con Redux, 
+ya sabe cómo funciona).
+
+useReducer a menudo es preferible a useState cuando se tiene una lógica compleja que involucra 
+múltiples subvalores o cuando el próximo estado depende del anterior. useReducer además 
+te permite optimizar el rendimiento para componentes que activan actualizaciones profundas, 
+porque puedes pasar hacia abajo dispatch en lugar de callbacks.
+
+
+//useContext
+Sirve para comunicacion de componentes sin propiedades .
+
+Context -> 

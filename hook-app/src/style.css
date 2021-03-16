@@ -1,0 +1,11 @@
+body{
+    padding: 30px;
+}
+
+.blockquote{
+    display: flex;
+}
+
+button{
+    margin-right: 10px;
+}
