@@ -126,3 +126,8 @@ git add .
 git commit -m "First commit"
 //Se cambia build por docs para desplegar mi aplicacion en git 
 Ir a github ir a la carpeta/setting/Github Pages/Seleccionar ruta
+
+
+
+//Routers
+https://reactrouter.com/web/api/NavLink

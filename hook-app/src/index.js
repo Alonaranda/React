@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ToDoApp } from './components/08-useReducer/ToDoApp';
+//import { ToDoApp } from './components/08-useReducer/ToDoApp';
 //import { SimpleForm } from './components/02-useEffect/SimpleForm';
 //import { HookApp } from './HookApp';
 //import { CounterApp } from './components/01-useState/CounterApp';
@@ -15,10 +15,11 @@ import { ToDoApp } from './components/08-useReducer/ToDoApp';
 //import { CallbackHooks } from './components/06-Memo/CallbackHooks';
 //import { Padre } from './components/07-tarea-memo/Padre';
 //import './components/08-useReducer/intro-reducer';
+import { MainApp } from './components/09-useContext/MainApp';
 
 
 ReactDOM.render(
-    <ToDoApp />,
+    <MainApp />,
   document.getElementById('root')
 );
 

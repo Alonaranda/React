@@ -76,4 +76,9 @@ porque puedes pasar hacia abajo dispatch en lugar de callbacks.
 //useContext
 Sirve para comunicacion de componentes sin propiedades .
 
-Context -> 
+Context -> Un intermediario entre dos componentes para intercambio de información 
+
+
+//Routers
+https://reactrouter.com/web/api/NavLink
+npm install react-router-dom
