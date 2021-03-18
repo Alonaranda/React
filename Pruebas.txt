@@ -74,7 +74,7 @@ Poner esto en setupTests.js:
 
 //Para probar customHooks
 https://react-hooks-testing-library.com/
-instalaar libreria de probar hooks
+instalar libreria de probar hooks
 npm install --save-dev @testing-library/react-hooks
 
 PeerDependencias --> No es necesario 
