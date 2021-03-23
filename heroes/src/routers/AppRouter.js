@@ -14,6 +14,7 @@ export const AppRouter = () => {
     <Router>
       <>
         <Switch>
+
             <PublicRoute 
               exact 
               path="/login" 

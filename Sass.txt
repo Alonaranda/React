@@ -1,0 +1,16 @@
+El documento que se crea termina con .scss
+styles.scss
+
+Para instalarlo:
+npm install node-sass
+
+Documentacion:
+https://sass-lang.com/documentation
+
+Podemos separar nuestros estilos, para que sea facil de leer 
+
+Podemos crear un archivo styles.scss para importar los _parcials.scss para tener más control
+@import './base/settings';
+
+//Boton Google
+https://gist.github.com/Klerith/76e65f02c8b68e1bd302275b26d3b188
