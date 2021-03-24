@@ -1,0 +1,90 @@
+//REDUX
+Es un patron, es una forma de trabajar .
+
+El reducer es una funcion pura
+Reducer: Es una función pura que maneja un estado 
+State(Un arreglo) -> Pagina o Vista -> Accion -> Reducer(Tiene los planos de que puede hacer con el state, agregar, borrar, actualizar)-->
+export const miFuncionReducer = (state = {}, action) => {
+    switch(action.type){
+        //Se recomienda crear un types, defiendo el nombre de estas actions 
+    }
+}
+
+
+    ¿Qué es Redux?
+Es un contenedor predecible del estado de nuestra aplicación,
+forma de controlar o modificar la informacion de mi aplicacion
+Es independiente a React.
+
+
+
+    ¿Como funciona? 
+Store: Donde esta la información que mis componentes consumiran (Fuente unica de la verdad).
+Store(State)->View->Actions->Dispatcher(middleware<->API)->Reducer(Conjunto de acciones de reducer)
+
+
+    Documentacion
+Redux JavaScript  --> https://es.redux.js.org/
+Redux con React   --> https://react-redux.js.org/
+
+    Instalacion
+npm install react-redux redux 
+
+    Para crear el Store 
+
+import {createStore, combineReducers} from 'redux';
+const reducers = combineReducers({
+    //Mis reducers
+    auth: authReducer,
+});
+export const store = createStore(reducers);
+
+
+No olvidar importar el store al .js principal
+import {Provider} from 'react-redux';
+import { store } from './store/store';
+
+export const JournalApp = () => {
+    return (
+        <Provider store={store}>
+            <AppRouter/>
+        </Provider>
+    )
+}
+
+//Para la herramienta de Redux
+Agregar: window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+En el store:
+export const store = createStore(
+    reducers,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+
+    //Middleware thunk -> Acciones asincronas
+Documentacion: https://github.com/zalmoxisus/redux-devtools-extension#usage
+Documentacion: https://www.npmjs.com/package/redux-thunk
+Instalacion: npm install --save redux-thunk
+
+En los archivos del store poner: 
+import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
+import { authReducer } from '../reducers/authReducer';
+import thunk from 'redux-thunk';
+
+const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+
+const reducers = combineReducers({
+    auth: authReducer
+});
+
+export const store = createStore(
+    reducers,
+    composeEnhancers(
+        applyMiddleware(thunk)
+        )
+);
+
+
+//Validador
+Documentacion: https://www.npmjs.com/package/validator
+Instalacion: npm i validator

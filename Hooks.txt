@@ -58,6 +58,7 @@ Memoriza un resultado para que no se tenga que estar ejecutando
 3. Debe de retornar un nuevo estado 
 4. Usualmente solo recibe dos argumentos(initialState) y la accion a ejecutar 
 
+
 //Funcionamineto del Reducer
 Empieza con un estado inicial = State 
 State -> Pagina o Vista -> Accion -> Reducer(Tiene los planos de que puede hacer con el state) 
