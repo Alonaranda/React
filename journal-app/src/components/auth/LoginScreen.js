@@ -7,7 +7,7 @@ import {startLoginEmailPassword, startGoogleLogin } from "../../actions/auth";
 export const LoginScreen = () => {
 
   const dispatch = useDispatch();
-  const {loading} = useSelector(state => state.ui)
+  const {loading} = useSelector(state => state.ui);
 
   //useForm
   const [formValues, handleInputChange] = useForm({
@@ -31,7 +31,7 @@ export const LoginScreen = () => {
 
   return (
     <>
-      <h3 className="auth__title">Login</h3>
+      <h3 className="auth__title animate__animated animate__fadeIn animate__faster">Login</h3>
       <form onSubmit={handleLogin}>
         <input 
             type="text" 

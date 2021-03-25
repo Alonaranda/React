@@ -8,6 +8,7 @@ import { login } from '../actions/auth';
 
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
+import { startLoadingNotes } from '../actions/notes';
 
 export const AppRouter = () => {
 
@@ -19,11 +20,14 @@ export const AppRouter = () => {
     //Un observable es un tipo de objeto que se puede disparar más de una vez
     useEffect(() => {
       //Identifica si hay cambio en el authenticacion
-      firebase.auth().onAuthStateChanged((user) => {
+      firebase.auth().onAuthStateChanged(async(user) => {
         //console.log(user);
         if( user?.uid ){
           dispatch(login(user.uid, user.displayName));
           setIsLoggedIn(true);
+
+          dispatch(startLoadingNotes(user.uid));
+
         }else{
           setIsLoggedIn(false);
         }

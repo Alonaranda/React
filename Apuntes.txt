@@ -179,3 +179,7 @@ Instalacion: npm install animate.css --save
 //Manejo de useLocation para el query string
 https://www.npmjs.com/package/query-string
 Instalacion: npm install query-string
+
+
+//Subir archivos como imagenes
+--> https://cloudinary.com/
