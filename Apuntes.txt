@@ -197,3 +197,8 @@ Instalacion moment --> npm i moment
 npm react modal --> https://www.npmjs.com/package/react-modal
 Instalacion --> npm i react-modal
 Estilos modal ---> https://gist.github.com/Klerith/5f490092ce9bd5775cb1d91162be0cea
+
+
+//Selectores de fecha
+Documentacion --> https://www.npmjs.com/package/react-datetime-picker
+Instalacion --> npm i react-datetime-picker

@@ -27,8 +27,15 @@ Store(State)->View->Actions->Dispatcher(middleware<->API)->Reducer(Conjunto de a
 Redux JavaScript  --> https://es.redux.js.org/
 Redux con React   --> https://react-redux.js.org/
 
-    Instalacion
-npm install react-redux redux 
+
+Instalacion --> npm install react-redux redux 
+Instalar todo -->  npm install react-redux redux redux-thunk
+
+Crear en SRC --> types, store, reducers, actions
+types --> Objeto types con nuestros nombre de reducers
+reducer ---> Simple funcion: Reducer(state,action) {Switch}
+store --> createStore(ObjetoRecucer, Middleware(thunk))
+action --> export const action({type:,payload:});
 
     Para crear el Store 
 
@@ -37,6 +44,7 @@ const reducers = combineReducers({
     //Mis reducers
     auth: authReducer,
 });
+
 export const store = createStore(reducers);
 
 
@@ -54,7 +62,9 @@ export const JournalApp = () => {
 
 //Para la herramienta de Redux
 Agregar: window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
 En el store:
+
 export const store = createStore(
     reducers,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -67,21 +77,23 @@ Documentacion: https://www.npmjs.com/package/redux-thunk
 Instalacion: npm install --save redux-thunk
 
 En los archivos del store poner: 
+
 import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
 import { authReducer } from '../reducers/authReducer';
 import thunk from 'redux-thunk';
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
+//El reducer se puede crear como otro documento .js --> rootReducers
 const reducers = combineReducers({
     auth: authReducer
 });
 
 export const store = createStore(
-    reducers,
+    rootReducers,
     composeEnhancers(
         applyMiddleware(thunk)
-        )
+    )
 );
 
 

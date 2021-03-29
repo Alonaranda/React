@@ -1,0 +1,4 @@
+//Se recomienda tener el front y el back separados asì podemos hacer cambios o saber donde fallo 
+
+//Crear package con toda la configuracion por defecto
+npm init -y
