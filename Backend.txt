@@ -2,3 +2,51 @@
 
 //Crear package con toda la configuracion por defecto
 npm init -y
+
+//Correr un script index.js
+node index.js 
+
+//Paquete que ayuda a correr programa cada que hay un cambio
+npm i nodemon -g
+nodemon index.js
+
+//Puedes declarar modo dev y modo produccion "start" en los scripts del package.json
+"scripts": {
+    "dev": "nodemon index.js", --> npm run dev
+    "start": "node index.js"   --> npm start 
+  },
+
+
+//Instalar express --> npm i express
+//Instalacion para usar mis variables de entorno de .env --> npm i dotenv
+
+
+//routers --> Se ponen las rutas 
+const { Router } = require('express');
+const router = Router();
+const { crearUsuario } = require('../controllers/auth')
+
+router.post('/new', crearUsuario);
+
+module.exports = router;
+
+
+//Controllers --> Poner por separado la res, req de las rutas
+const {response} = require('express');
+
+const crearUsuario = (req, res = response) => {
+    res.json({
+        ok: true,
+        msg: 'registro'
+    });
+}
+
+module.exports = {
+    crearUsuario
+}
+
+//req --> La persona solicita
+//res --> Nostros respondemos
+
+
+//Para hacer las validaciones del form, existe express validator --> npm i express-validator
