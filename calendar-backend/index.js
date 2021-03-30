@@ -4,10 +4,13 @@
 //Configuracion basica de express, como hacer un import
 const express = require('express');
 require('dotenv').config();
-
+const { dbConnection } = require('./database/config');
 
 //Crear el servidor de express
 const app = express();
+
+//Llamar mi DB
+dbConnection();
 
 //Directorio publico
 app.use(express.static('public'));
