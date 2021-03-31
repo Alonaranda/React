@@ -107,3 +107,4 @@ Como se crea una api en el backend, te ayudan a no recibir peticiones, poner seg
 
 //Desplegar nuestro backend en Heroku
 Sitio --> https://www.heroku.com/
+Ver losg enconsola: heroku logs -n  --t
