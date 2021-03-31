@@ -22,7 +22,8 @@ app.use(express.json());
 
 //Rutas o Endpoints
 app.use('/api/auth', require('./routes/auth')); // --> Auth: crear, login, token
-// --> Crud: Eventos
+app.use('/api/events', require('./routes/events')); // --> Crud: Eventos
+
 
 
 //Escuchar peticiones
