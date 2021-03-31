@@ -8,7 +8,10 @@ const { Router } = require('express');
 const { check} = require('express-validator');
 const { validarCampos } = require('../middlewares/validar-campos')
 const { crearUsuario, loginUsuario, revalidarToken } = require('../controllers/auth');
+const { validarJWT } = require('../middlewares/validar-jwt');
+
 const router = Router();
+
 
 
 //Ruta de registro - POST
@@ -34,8 +37,8 @@ router.post(
     loginUsuario
 );
 
-//Ruta de actualizar token - GET
-router.get('/renew', revalidarToken);
+//Ruta de validacion de token - GET
+router.get('/renew', validarJWT , revalidarToken);
 
 
 //Exportaciones

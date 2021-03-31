@@ -53,7 +53,9 @@ module.exports = {
 
 En mongo Atlas hacer tu cuenta y crear un Clusters
 Con Mongo Compass lo relacionas a ese cluster 
-pass: OwrRlh7dUZPSZhvh
+
+
+
 
 //Para hacer la comunicacion node con Mongo --> https://mongoosejs.com/
 Instalacion --> npm i mongoose
@@ -64,3 +66,39 @@ const Cat = mongoose.model('Cat', { name: String });
 
 const kitty = new Cat({ name: 'Zildjian' });
 kitty.save().then(() => console.log('meow'));
+
+
+//Encriptar contraseñas
+Instalacion --> npm i bcryptjs
+const bcrypt = require('bcryptjs');
+
+
+//Generar el Json Web Token para siempre estar authenticados 
+Documentacion --> https://jwt.io/
+Instalacion --> npm i jsonwebtoken
+
+//Crear helpers --> jwt.js:
+
+const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
+const generarJWT = (uid, name) => {
+
+    return new Promise((resolve, reject => {
+        const payload = {uid, name};
+
+        jwt.sign(payload, process.env.SECRET_JWT_SEED, {expiresIn: '3hr'}, (err, token) => {
+            if(err) {
+                console.log(err);
+                reject('No se pudo generar el token');
+            }else{
+                resolve(token);
+            }
+        });
+    }));
+}
+
+
+//CORS 
+Documentacion --> https://www.npmjs.com/package/cors
+Instalacion --> npm i cors
+Como se crea una api en el backend, te ayudan a no recibir peticiones, poner seguridad

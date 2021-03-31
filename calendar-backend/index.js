@@ -1,16 +1,17 @@
-//console.log('Empezando backend!');
-
-
 //Configuracion basica de express, como hacer un import
 const express = require('express');
 require('dotenv').config();
 const { dbConnection } = require('./database/config');
+const cors = require('cors');
 
 //Crear el servidor de express
 const app = express();
 
 //Llamar mi DB
 dbConnection();
+
+//CORS 
+app.use(cors());
 
 //Directorio publico
 app.use(express.static('public'));
