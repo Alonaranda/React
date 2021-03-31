@@ -102,3 +102,8 @@ const generarJWT = (uid, name) => {
 Documentacion --> https://www.npmjs.com/package/cors
 Instalacion --> npm i cors
 Como se crea una api en el backend, te ayudan a no recibir peticiones, poner seguridad
+
+
+
+//Desplegar nuestro backend en Heroku
+Sitio --> https://www.heroku.com/
