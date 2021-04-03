@@ -5,7 +5,7 @@ import moment from 'moment';
 import DateTimePicker from 'react-datetime-picker';
 import Swal from 'sweetalert2';
 import { uiCloseModal } from '../../actions/ui';
-import { eventAddNew, eventClearActiveEvent, eventUpdated } from '../../actions/events';
+import { eventClearActiveEvent, eventStartAddNew, eventStartUpdated } from '../../actions/events';
 
 const customStyles = {
     content : {
@@ -26,8 +26,8 @@ const nowPlus1 = now.clone().add(1, 'hours');
 const initEvent = {
     title: '',
     notes: '',
-    start: now.toDate(),
-    end: nowPlus1.toDate()
+    start: moment(now).toDate(),
+    end: moment(nowPlus1).toDate()
 }
 
 
@@ -112,15 +112,10 @@ export const CalendarModal = () => {
         }
 
         if(activeEvent){
-            dispatch(eventUpdated(formValues))
+            dispatch(eventStartUpdated(formValues));
         }else {
-            dispatch(eventAddNew({
+            dispatch(eventStartAddNew({
                 ...formValues,
-                id: new Date().getTime(),
-                user: {
-                    _id: '123',
-                    name: 'Chris'
-                }
             }));
         }
 

@@ -83,17 +83,12 @@ const loginUsuario = async (req, res = response) => {
         //Generamos nuestro JWT - Token
         const token = await generarJWT(usuario.id, usuario.name);
 
-
         res.status(200).json({
             ok: true,
             uid: usuario.id,
             name: usuario.name,
             token
         });
-
-
-
-
 
 
     } catch (error) {
@@ -113,14 +108,12 @@ const loginUsuario = async (req, res = response) => {
 const revalidarToken = async (req, res = response) => {
 
     const {uid, name } = req;
-
-
     //Generamos nuestro JWT - Token
     const token = await generarJWT(uid, name);
-
-
     res.json({
         ok: true,
+        uid,
+        name,
         token
     });
 }
