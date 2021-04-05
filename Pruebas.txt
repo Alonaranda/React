@@ -80,3 +80,6 @@ npm install --save-dev @testing-library/react-hooks
 PeerDependencias --> No es necesario 
 npm install react@^16.9.0
 npm install --save-dev react-test-renderer@^16.9.0
+
+
+https://github.com/reduxjs/redux-mock-store
